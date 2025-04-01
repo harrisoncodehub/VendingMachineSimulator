@@ -1,5 +1,8 @@
 # Vending Machine Simulator 
 
+## Git hub clone
+https://github.com/harrisoncodehub/VendingMachineSimulator.git
+
 
 
  ## Team Contributors 
