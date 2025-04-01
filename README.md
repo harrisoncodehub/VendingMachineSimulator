@@ -8,6 +8,6 @@ https://github.com/harrisoncodehub/VendingMachineSimulator.git
  ## Team Contributors 
 
     -- Harrison Hubbard
-    -- 
+    -- Jadon Tyndall
     --
     --
