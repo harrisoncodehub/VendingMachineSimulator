@@ -10,4 +10,4 @@ https://github.com/harrisoncodehub/VendingMachineSimulator.git
     -- Harrison Hubbard
     -- Jadon Tyndall
     -- Fate Franks
-    --
+    -- Miles Hudock
