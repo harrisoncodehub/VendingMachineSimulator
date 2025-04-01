@@ -7,10 +7,10 @@ The Vending Machine Simulator would consist of managing items and inventory, dis
 
  ## Team Contributors 
 
-    -- Harrison Hubbard
-    -- Jadon Tyndall
-    -- Fate Franks
-    -- Miles Hudock
+    -- Harrison Hubbard (harrisoncodehub) 
+    -- Jadon Tyndall    (coderex08)
+    -- Fate Franks      (FateFranks03) 
+    -- Miles Hudock     (miles08) 
 
 
 
