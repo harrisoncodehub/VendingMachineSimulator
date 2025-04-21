@@ -1,5 +1,7 @@
+package com.example.vendingmachinesimulator;
+
 /**
- * VendingItem.java
+ * VendingItem class.
  * @author Miles Hudock
  * CSC-331-002
  * Wed Apr 16th
@@ -11,7 +13,7 @@ public class VendingItem {
     private int quantity;
 
     /**
-     * Constructor for VendingItem.
+     * Constructor for the VendingItem class.
      * @param name      The name of the item.
      * @param price     The price of the item
      * @param quantity   The quantity of the item
