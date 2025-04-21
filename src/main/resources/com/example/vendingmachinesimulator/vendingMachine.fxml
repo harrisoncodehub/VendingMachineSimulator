@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Ellipse?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:controller="com.example.VendingMachineSimulatorController.VendingMachineSimulatorController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="856.0" prefWidth="862.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="5.0" layoutY="18.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="786.0" prefWidth="597.0" style="-fx-background-color: #5f5f5f; -fx-border-color: black; -fx-border-width: 5; -fx-background-color: linear-gradient(#6a6a6a, #3a3a3a);">
+         <children>
+            <Group layoutX="22.0" layoutY="238.0">
+               <children>
+                  <Button fx:id="Coke" contentDisplay="GRAPHIC_ONLY" layoutX="4.100000381469727" layoutY="4.100006103515625" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleCokeButton" prefHeight="90.0" prefWidth="129.0" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2); -fx-border-width: 2;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <graphic>
+                        <ImageView fitHeight="76.0" fitWidth="80.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/coket.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Chugjug" layoutX="4.100000381469727" layoutY="103.10000610351562" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleChugJugButton" prefHeight="90.0" prefWidth="129.0" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2); -fx-border-width: 2;">
+                     <graphic>
+                        <ImageView fitHeight="93.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/chugjugt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Mug" layoutX="4.100000381469727" layoutY="200.10000610351562" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleMugButton" prefHeight="90.0" prefWidth="129.0" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2); -fx-border-width: 2;">
+                     <graphic>
+                        <ImageView fitHeight="106.0" fitWidth="79.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/mugmugmug.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </Group>
+            <Group layoutX="433.0" layoutY="239.0">
+               <children>
+                  <Button fx:id="Ketchup" layoutX="4.100006103515625" layoutY="4.100006103515625" mnemonicParsing="false" onAction="#handleKetchupButton" prefHeight="89.0" prefWidth="129.0" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-background-radius: 10; -fx-border-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2); -fx-border-width: 2;">
+                     <graphic>
+                        <ImageView fitHeight="77.0" fitWidth="96.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../../../../../../Downloads/ketchup.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="Saratoga" layoutX="4.100006103515625" layoutY="103.10000610351562" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" mnemonicParsing="false" onAction="#handleSaratogaButton" prefHeight="90.0" prefWidth="129.0" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2); -fx-border-width: 2; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 4, 0, 2, 2),    lighting(        lightDistant(45.0, 45.0, white),        surfaceScale(8.0),        diffuseConstant(1.0),        specularConstant(0.5),        specularExponent(20.0)    );">
+                     <graphic>
+                        <ImageView fitHeight="106.0" fitWidth="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/saratogat.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="Squirt" layoutX="4.100006103515625" layoutY="200.10000610351562" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" onAction="#handleSquirtButton" prefHeight="90.0" prefWidth="129.0" style="-fx-background-color: skyblue; -fx-border-color: black; -fx-border-radius: 10; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2); -fx-border-width: 2;">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="81.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/squirtt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </Group>
+            <TextField fx:id="itemScreen" editable="false" layoutX="168.0" layoutY="171.0" prefHeight="55.0" prefWidth="255.0" style="-fx-background-color: #000000; -fx-text-fill: green; -fx-font-size: 20; -fx-border-color: grey; -fx-border-width: 4; -fx-effect: innershadow(gaussian, #454545, 20, 0.8, 0, 0);">
+               <font>
+                  <Font name="Arial" size="36.0" />
+               </font>
+            </TextField>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7c7c7c" height="126.0" layoutX="112.0" layoutY="583.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 3;" width="377.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#454545" height="76.0" layoutX="136.0" layoutY="608.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2);" width="329.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#037973" height="76.0" layoutX="448.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="112.0" />
+            <Group fx:id="cardArea" layoutX="206.0" layoutY="259.0">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#2f2f2f" height="158.0" layoutX="5.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 10, 0, 5, 10); -fx-stroke-width: 3;" width="168.0" />
+                  <TextArea fx:id="paymentScreen" editable="false" layoutX="20.0" layoutY="7.0" prefHeight="55.0" prefWidth="137.0" style="-fx-control-inner-background: #0cdc2a; -fx-border-color: #2f2f2f; -fx-border-width: 0; -fx-effect: innershadow(gaussian, #00ff00, 20, 0.8, 0, 0);" text="&#10;" />
+                  <Ellipse fill="WHITE" layoutX="36.0" layoutY="75.0" radiusX="11.0" radiusY="6.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#b5b5b5" layoutX="140.0" layoutY="75.0" radiusX="11.0" radiusY="6.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#b5b5b5" layoutX="70.0" layoutY="75.0" radiusX="11.0" radiusY="6.0" stroke="BLACK" strokeType="INSIDE" />
+                  <Ellipse fill="#b5b5b5" layoutX="105.0" layoutY="75.0" radiusX="11.0" radiusY="6.0" stroke="BLACK" strokeType="INSIDE" />
+                  <ImageView fitHeight="35.0" fitWidth="57.0" layoutX="57.0" layoutY="127.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/paymenttypes.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="41.0" fitWidth="57.0" layoutX="60.0" layoutY="91.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/taptopay.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+            <Text fill="WHITE" layoutX="466.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20;" text="CARD ONLY" textAlignment="CENTER" wrappingWidth="76.484375" />
+            <Line endX="477.0" layoutX="117.0" layoutY="717.0" startX="-120.0" />
+            <Line endX="475.0" layoutX="119.0" layoutY="732.0" startX="-118.0" />
+            <Line endX="208.5" layoutX="255.0" layoutY="646.0" startX="-118.0" style="-fx-stroke-width: 3;" />
+            <Group layoutX="23.0" layoutY="67.0">
+               <children>
+                  <Text fill="#037973" layoutX="8.029296875" layoutY="1.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNCW VENDING" wrappingWidth="421.6583786010742">
+                     <font>
+                        <Font name="Arial Bold" size="60.0" />
+                     </font>
+                  </Text>
+                  <Text fill="WHITE" layoutX="14.0" layoutY="-3.0" strokeType="OUTSIDE" strokeWidth="0.0" text="UNCW VENDING" wrappingWidth="421.6583786010742">
+                     <font>
+                        <Font name="Arial Bold" size="60.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Group>
+         </children>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+      </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#393939" height="55.0" layoutX="5.0" layoutY="800.0" stroke="BLACK" strokeType="INSIDE" style="-: black; -fx-stroke-width: 5; -fx-border-width: 10;" width="68.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#393939" height="55.0" layoutX="534.0" layoutY="800.0" stroke="BLACK" strokeType="INSIDE" style="-: black; -fx-stroke-width: 5; -fx-border-width: 10;" width="68.0" />
+      <ImageView fx:id="debitCard" fitHeight="150.0" fitWidth="200.0" layoutX="632.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/debitcardt.png" />
+         </image>
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+   </children>
+</Pane>
