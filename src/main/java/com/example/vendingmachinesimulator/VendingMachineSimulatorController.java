@@ -5,8 +5,6 @@ package com.example.vendingmachinesimulator;
  * 4/22/2025
  * Purpose: Controller file for the vending machine, calls methods, creates variables, and ensures its usability
  */
-
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -20,18 +18,15 @@ import javafx.animation.Timeline; //timer libraries
 import javafx.animation.KeyFrame;
 import javafx.util.Duration;
 
-
 import javafx.scene.image.Image;
-
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.File;
 
-
-
-import javax.sound.sampled.*;
+//For changing audio
+import javax.sound.sampled.FloatControl;
 
 
 public class VendingMachineSimulatorController {
@@ -117,8 +112,12 @@ public class VendingMachineSimulatorController {
                 AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInput);
+                FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gainControl.setValue(6.0f); // Decrease volume (in decibels)
                 clip.start();
                 //plays the clip
+
+
             }
             else{
                 System.out.println("Cant find file");
@@ -130,7 +129,7 @@ public class VendingMachineSimulatorController {
     }
 
     /**
-     * Allows the debit card to be draggable and checks to see if its hovering over the scanner
+     * Allows the debit card to be draggable and checks to see if it's hovering over the scanner
      */
     @FXML
     private void enableCardDrag() {
