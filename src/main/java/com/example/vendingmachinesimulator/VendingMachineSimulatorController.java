@@ -113,11 +113,33 @@ public class VendingMachineSimulatorController {
                 Clip clip = AudioSystem.getClip();
                 clip.open(audioInput);
                 FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
-                gainControl.setValue(6.0f); // Decrease volume (in decibels)
+                gainControl.setValue(-25.0f); // Decrease volume (in decibels)
                 clip.start();
                 //plays the clip
+            }
+            else{
+                System.out.println("Cant find file");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
 
-
+    public static void PlaySound(String location){
+        try{
+            //creates file object
+            File musicPath = new File(location);
+            //checks to see if the path exists
+            if(musicPath.exists())
+            {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gainControl.setValue(5.0f); // Decrease volume (in decibels)
+                clip.start();
+                //plays the clip
             }
             else{
                 System.out.println("Cant find file");
@@ -201,7 +223,7 @@ public class VendingMachineSimulatorController {
             //pauses program for 3 seconds, does not affect GUI
             Thread.sleep(3000);
             //plays clunk noise of item falling
-            PlayMusic(filepath2);
+            PlaySound(filepath2);
             itemSelected = false;
             dispenseItem();
 
