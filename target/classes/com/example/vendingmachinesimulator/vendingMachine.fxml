@@ -134,7 +134,7 @@
       </Pane>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#393939" height="55.0" layoutX="5.0" layoutY="800.0" stroke="BLACK" strokeType="INSIDE" style="-: black; -fx-stroke-width: 5; -fx-border-width: 10;" width="68.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#393939" height="55.0" layoutX="534.0" layoutY="800.0" stroke="BLACK" strokeType="INSIDE" style="-: black; -fx-stroke-width: 5; -fx-border-width: 10;" width="68.0" />
-      <ImageView fx:id="debitCard" fitHeight="150.0" fitWidth="200.0" layoutX="632.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="debitCard" fitHeight="150.0" onDragDetected="#enableCardDrag" fitWidth="200.0" layoutX="632.0" layoutY="365.0" pickOnBounds="true" preserveRatio="true" >
          <image>
             <Image url="@images/debitcardt.png" />
          </image>
@@ -142,5 +142,6 @@
             <DropShadow />
          </effect>
       </ImageView>
+      <ImageView fx:id="dispensedItem" layoutX="100" layoutY="50" fitWidth="100" fitHeight="100" visible="false" />
    </children>
 </Pane>

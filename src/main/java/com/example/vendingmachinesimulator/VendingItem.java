@@ -1,7 +1,8 @@
 /**
- * @author Miles Hudock
+ * @author Miles Hudock, Harrison Hubbard, Jaydon Tyndell, Fate Franks
  * CSC-331-002
- * Wed Apr 16th
+ * 4/22/2025
+ * Purpose: Class for creating vending item objects
  */
 
 package com.example.vendingmachinesimulator;
