@@ -126,6 +126,10 @@ public class VendingMachineSimulatorController {
         }
     }
 
+    /**
+     * Audio for when the item is dispensed
+     * @param location
+     */
     public static void PlaySound(String location){
         try{
             //creates file object
@@ -231,7 +235,7 @@ public class VendingMachineSimulatorController {
         }
 
         else{
-            itemScreen.setText("CHOOSE AN ITEM");
+            itemScreen.setText("REMOVE CARD AND CHOOSE ITEM");
         }
 
     }

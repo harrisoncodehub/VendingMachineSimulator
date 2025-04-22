@@ -81,7 +81,7 @@
                      </graphic></Button>
                </children>
             </Group>
-            <TextField fx:id="itemScreen" editable="false" layoutX="168.0" layoutY="171.0" prefHeight="55.0" prefWidth="255.0" style="-fx-background-color: #000000; -fx-text-fill: green; -fx-font-size: 20; -fx-border-color: grey; -fx-border-width: 4; -fx-effect: innershadow(gaussian, #454545, 20, 0.8, 0, 0);">
+            <TextField fx:id="itemScreen" editable="false" layoutX="168.0" layoutY="171.0" prefHeight="55.0" prefWidth="255.0" style="-fx-background-color: #000000; -fx-text-fill: green; -fx-font-size: 12; -fx-border-color: grey; -fx-border-width: 4; -fx-effect: innershadow(gaussian, #454545, 20, 0.8, 0, 0);">
                <font>
                   <Font name="Arial" size="36.0" />
                </font>
