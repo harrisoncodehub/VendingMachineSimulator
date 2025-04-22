@@ -7,4 +7,5 @@ module com.example.vendingmachinesimulator {
 
     opens com.example.vendingmachinesimulator to javafx.fxml;
     exports com.example.vendingmachinesimulator;
+
 }

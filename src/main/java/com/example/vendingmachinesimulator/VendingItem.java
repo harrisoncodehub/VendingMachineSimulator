@@ -4,7 +4,7 @@
  * Wed Apr 16th
  */
 
-package com.example.VendingItem;
+package com.example.vendingmachinesimulator;
 public class VendingItem {
     private String name;
     private double price;

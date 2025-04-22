@@ -1,24 +1,17 @@
-package com.example.VendingMachineSimulatorController;
+package com.example.vendingmachinesimulator;
 /**
  * Sample Skeleton for 'vendingMachine.fxml' Controller Class
  */
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.ArrayList;
-import com.example.VendingItem.VendingItem;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.Group;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 
 
@@ -108,7 +101,7 @@ public class VendingMachineSimulatorController {
 
     // Helper method to format and set item text
     private void displayItem(String name, double price) {
-        itemScreen.setText(name + " - $" + String.format("%.2f", price));
+        itemScreen.setText(name + " - $" + String.format("%.2f",price));
     }
 
     //DraggableMaker draggableMaker = new DraggableMaker();
