@@ -87,7 +87,7 @@
                </font>
             </TextField>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#7c7c7c" height="126.0" layoutX="112.0" layoutY="583.0" stroke="BLACK" strokeType="INSIDE" style="-fx-stroke-width: 3;" width="377.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#454545" height="76.0" layoutX="136.0" layoutY="608.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2);" width="329.0" />
+            <Rectangle fx:id= "dispenser" arcHeight="5.0" arcWidth="5.0" fill="#454545" height="76.0" layoutX="136.0" layoutY="608.0" stroke="BLACK" strokeType="INSIDE" style="-fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 4, 0, 2, 2);" width="329.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#037973" height="76.0" layoutX="448.0" layoutY="25.0" stroke="BLACK" strokeType="INSIDE" width="112.0" />
             <Group fx:id="cardArea" layoutX="206.0" layoutY="259.0">
                <children>
@@ -142,6 +142,6 @@
             <DropShadow />
          </effect>
       </ImageView>
-      <ImageView fx:id="dispensedItem" layoutX="100" layoutY="50" fitWidth="100" fitHeight="100" visible="false" />
+      <ImageView fx:id="dispensedItem"    onMouseClicked="#hideDispensedItem" layoutX="100" layoutY="50" fitWidth="100" fitHeight="100" visible="false" />
    </children>
 </Pane>

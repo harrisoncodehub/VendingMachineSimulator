@@ -5,8 +5,11 @@ package com.example.vendingmachinesimulator;
  * 4/22/2025
  * Purpose: Controller file for the vending machine, calls methods, creates variables, and ensures its usability
  */
+import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -16,7 +19,10 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.animation.Timeline; //timer libraries
 import javafx.animation.KeyFrame;
+import javafx.scene.paint.Paint;
 import javafx.util.Duration;
+
+import javafx.scene.shape.Rectangle;
 
 import javafx.scene.image.Image;
 
@@ -37,6 +43,7 @@ public class VendingMachineSimulatorController {
     //Files paths for audio files stored in strings for usage
     static String filepath = "vendingnoise.wav";
     static String filepath2 = "vendingdispense.wav";
+    static String filepath3 = "gulpgulp.wav";
 
 
     //Variables
@@ -82,6 +89,8 @@ public class VendingMachineSimulatorController {
     @FXML
     private ImageView dispensedItem;
 
+    @FXML
+    private Rectangle dispenser;
 
     //variables for drag
     @FXML
@@ -154,6 +163,30 @@ public class VendingMachineSimulatorController {
         }
     }
 
+    public static void PlayGulp(String location){
+        try{
+            //creates file object
+            File musicPath = new File(location);
+            //checks to see if the path exists
+            if(musicPath.exists())
+            {
+                AudioInputStream audioInput = AudioSystem.getAudioInputStream(musicPath);
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInput);
+                FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gainControl.setValue(3.0f); // Decrease volume (in decibels)
+                clip.start();
+                //plays the clip
+            }
+            else{
+                System.out.println("Cant find file");
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
     /**
      * Allows the debit card to be draggable and checks to see if it's hovering over the scanner
      */
@@ -168,8 +201,10 @@ public class VendingMachineSimulatorController {
         });
 
         debitCard.setOnMouseDragged(mouseEvent ->{
-            debitCard.setLayoutX(mouseEvent.getSceneX() - mouseAnchorX);
-            debitCard.setLayoutY(mouseEvent.getSceneY() - mouseAnchorY);
+            debitCard.setLayoutX(mouseEvent.getSceneX());
+            debitCard.setLayoutY(mouseEvent.getSceneY());
+
+
         //checks to see if it is hovering the scanner
         checkIfHoveringScanner();
         });
@@ -245,17 +280,29 @@ public class VendingMachineSimulatorController {
      */
     //********************************************************
     @FXML
+    private void hideDispensedItem(){
+        dispensedItem.setVisible(false);
+        PlayGulp(filepath3);
+        dispenser.setFill(Paint.valueOf("#454545"));
+    }
+
+    @FXML
     private void dispenseItem() throws InterruptedException {
         //creates new image and makes it visible
         dispensedItem.setImage(new Image(String.valueOf(getClass().getResource("/com/example/vendingmachinesimulator/images/"+item).toExternalForm())));
         dispensedItem.setVisible(true);
 
         //Sets position of item, will have to configure
-        dispensedItem.setLayoutY(50);
-        dispensedItem.setLayoutX(100);
+        dispensedItem.setLayoutY(620);
+        dispensedItem.setLayoutX(250);
+        dispensedItem.setRotate(90);
+        dispenser.setFill(Paint.valueOf("black"));
+
+
         itemScreen.setText("Thank you for your purchase!");
-        Thread.sleep(3000);
-        itemScreen.setText("UNCW VENDING");
+        PauseTransition pause = new PauseTransition(Duration.seconds(3));
+        pause.play();
+        itemScreen.setText("Select Item");
 
     }
 
@@ -268,6 +315,7 @@ public class VendingMachineSimulatorController {
         displayItem(coke.getName(), coke.getPrice());
         itemSelected = true;
         item = "coket.png";
+        paymentScreen.setText("Please tap card.");
     }
 
     /**
@@ -280,6 +328,8 @@ public class VendingMachineSimulatorController {
         displayItem(ketchup.getName(), ketchup.getPrice());
         itemSelected = true;
         item = "ketchup.png";
+        paymentScreen.setText("Please tap card.");
+
     }
 
     /**
@@ -292,6 +342,7 @@ public class VendingMachineSimulatorController {
         displayItem(chugjug.getName(), chugjug.getPrice());
         itemSelected = true;
         item = "chugjugt.png";
+        paymentScreen.setText("Please tap card.");
     }
 
     /**
@@ -304,6 +355,7 @@ public class VendingMachineSimulatorController {
         displayItem(mug.getName(),mug.getPrice());
         itemSelected = true;
         item = "mugmugmug.png";
+        paymentScreen.setText("Please tap card.");
     }
 
     /**
@@ -316,6 +368,7 @@ public class VendingMachineSimulatorController {
         displayItem(saratoga.getName(),saratoga.getPrice());
         itemSelected = true;
         item = "saratogat.png";
+        paymentScreen.setText("Please tap card.");
     }
 
     /**
@@ -328,6 +381,7 @@ public class VendingMachineSimulatorController {
         displayItem(squirt.getName(),squirt.getPrice());
         itemSelected = true;
         item = "squirtt.png";
+        paymentScreen.setText("Please tap card.");
     }
 
     /**
@@ -357,6 +411,7 @@ public class VendingMachineSimulatorController {
         assert itemScreen != null : "fx:id=\"itemScreen\" was not injected: check your FXML file 'vendingMachine.fxml'.";
         assert paymentScreen != null : "fx:id=\"paymentScreen\" was not injected: check your FXML file 'vendingMachine.fxml'.";
         paymentScreen.setText("Please tap card.");
+        itemScreen.setText("Select Item");
         PlayMusic(filepath);
 
 
