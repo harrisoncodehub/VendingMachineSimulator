@@ -5,7 +5,6 @@ package com.example.vendingmachinesimulator;
  * 4/22/2025
  * Purpose: Controller file for the vending machine, calls methods, creates variables, and ensures its usability
  */
-import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -201,8 +200,6 @@ public class VendingMachineSimulatorController {
         debitCard.setOnMouseDragged(mouseEvent ->{
             debitCard.setLayoutX(mouseEvent.getSceneX() - mouseAnchorX);
             debitCard.setLayoutY(mouseEvent.getSceneY() - mouseAnchorY);
-
-
         //checks to see if it is hovering the scanner
         checkIfHoveringScanner();
         });
@@ -274,7 +271,7 @@ public class VendingMachineSimulatorController {
     }
 
     /**
-     * displays the item that the user purchased
+     * removes item, plays sound, and resets color of dispenser
      */
     //********************************************************
     @FXML
@@ -284,6 +281,10 @@ public class VendingMachineSimulatorController {
         dispenser.setFill(Paint.valueOf("#454545"));
     }
 
+    /**
+     * displays item after button and confirmation
+     * @throws InterruptedException
+     */
     @FXML
     private void dispenseItem() throws InterruptedException {
         //creates new image and makes it visible
@@ -394,7 +395,9 @@ public class VendingMachineSimulatorController {
     //DraggableMaker draggableMaker = new DraggableMaker();
 
 
-
+    /**
+     * initializes buttons, images, sets text, and plays vending noise
+     */
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
 
@@ -414,7 +417,9 @@ public class VendingMachineSimulatorController {
 
 
     }
-
+    /**
+     * vending noise
+     */
     public static void main(String[] args){
         while(true){
             PlayMusic(filepath);
