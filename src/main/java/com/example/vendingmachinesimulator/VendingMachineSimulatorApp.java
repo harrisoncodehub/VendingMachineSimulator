@@ -12,6 +12,9 @@ import javafx.scene.Parent;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
 
+/**
+ * App that loads the fxml file
+ */
 public class VendingMachineSimulatorApp extends Application {
     @Override
     public void start(Stage stage) throws Exception{
