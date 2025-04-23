@@ -193,16 +193,14 @@ public class VendingMachineSimulatorController {
     @FXML
     private void enableCardDrag() {
         //enables debit card to be draggable
-        debitCard.setOnMouseDragged(mouseEvent -> {
-
-
-        mouseAnchorX = mouseEvent.getX();
-        mouseAnchorY = mouseEvent.getY();
+        debitCard.setOnMousePressed(mouseEvent -> {
+            mouseAnchorX = mouseEvent.getSceneX() - debitCard.getLayoutX();
+            mouseAnchorY = mouseEvent.getSceneY() - debitCard.getLayoutY();
         });
 
         debitCard.setOnMouseDragged(mouseEvent ->{
-            debitCard.setLayoutX(mouseEvent.getSceneX());
-            debitCard.setLayoutY(mouseEvent.getSceneY());
+            debitCard.setLayoutX(mouseEvent.getSceneX() - mouseAnchorX);
+            debitCard.setLayoutY(mouseEvent.getSceneY() - mouseAnchorY);
 
 
         //checks to see if it is hovering the scanner
