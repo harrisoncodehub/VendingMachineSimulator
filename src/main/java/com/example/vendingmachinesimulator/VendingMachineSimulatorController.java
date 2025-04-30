@@ -231,11 +231,7 @@ public class VendingMachineSimulatorController {
 
             //timer for hovering, 3 seconds, if correct it will call confirm payment
             hoverTimer = new Timeline(new KeyFrame(Duration.seconds(3),e -> {
-                try {
-                    confirmPayment();
-                } catch (InterruptedException ex) {
-                    throw new RuntimeException(ex);
-                }
+                confirmPayment();
             }));
 
             hoverTimer.setCycleCount(1);
@@ -251,17 +247,23 @@ public class VendingMachineSimulatorController {
      * Checks to see if an item was selected, if so payment screen is displayed.
      * @throws InterruptedException
      */
-    private void confirmPayment() throws InterruptedException {
-        if(itemSelected){
+    private void confirmPayment() {
+        if (itemSelected) {
             paymentScreen.setText("Payment Confirmed!");
-            //pauses program for 3 seconds, does not affect GUI
-            Thread.sleep(3000);
-            //plays clunk noise of item falling
-            PlaySound(filepath2);
-            itemSelected = false;
-            dispenseItem();
 
-
+            // Create a 3-second pause using Timeline
+            Timeline delay = new Timeline(new KeyFrame(Duration.seconds(3), e -> {
+                // After pause, play sound and dispense item
+                PlaySound(filepath2);
+                itemSelected = false;
+                try {
+                    dispenseItem();
+                } catch (InterruptedException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }));
+            delay.setCycleCount(1);
+            delay.play();
         }
 
         else{
